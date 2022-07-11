@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create Article
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Article adding</h1>
+        <form method="POST" autocomplete="off">
+            <input type="text" name="title", id="id" class="form-control" placeholder="Input title"><br>
+            <textarea rows="5" style="height:100%;" name="intro" id="intro" class="form-control"
+                      placeholder="Input introduction"></textarea><br>
+            <textarea rows='15' style="height:100%;" name="text" id="text" class="form-control"
+                      placeholder="Input Article"></textarea><br>
+            <input type="submit" name="submit" class="btn btn-success" value="Add Article">
+        </form>
+    </div>
+{% endblock %}
