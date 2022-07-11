@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<div class="container-fluid py-3">
+    <header>
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url_for('index', filename='app.py') }}">Home</a>
+                <a class="me-3 py-2 btn btn-warning" href="{{ url_for('create_article', filename='app.py') }}">Add</a>
+            </nav>
+        </div>
+
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-muted">&copy; 2017–2022</small>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

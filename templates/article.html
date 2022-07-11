@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Article
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="row row-cols-1 row-cols-md-1 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">{{ my_article.title }}</h4>
+                    </div>
+                    <div class="card-body text-sm-start">
+                        <p class="text-sm-start" style="font-size:x-large">{{ my_article.text }}<p/>
+                        <a type="button" class="w-40 btn btn-lg btn-primary"
+                           href="{{ url_for('index', filename='app.py') }}">Back</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+{% endblock %}

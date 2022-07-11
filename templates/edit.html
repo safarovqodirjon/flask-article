@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create Article
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Article adding</h1>
+        <form method="POST" autocomplete="off">
+            <input type="text" name="title" , id="id" class="form-control" value="{{ my_data.title }}"><br>
+
+            <textarea rows="5" style="height:100%;" name="intro" id="intro"
+                      class="form-control">{{ my_data.intro }}</textarea><br>
+            <textarea rows='15' style="height:100%;" name="text" id="text"
+                      class="form-control">{{ my_data.text }}</textarea><br>
+            <input type="submit" name="submit" class="btn text-white" value="Edit Article" style="background: darkviolet">
+        </form>
+    </div>
+{% endblock %}
