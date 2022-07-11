@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="row row-cols-1 row-cols-md-1 mb-3 text-center">
+            {% for article in articles %}
+
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">{{ article.title }}</h4>
+                        </div>
+                        <div class="card-body text-sm-start">
+                            <p class="text-sm-start" style="font-size:x-large ">{{ article.intro[0:500] }}<p/>
+                            <a type="submit" class="w-40 btn btn-lg btn-primary"
+                               href="{{ url_for('article', filename="app.py", id=article.id) }}">Подробнее</a>
+                            <a type="button" class="w-40 btn btn-lg btn-danger"
+                               href="{{ url_for('delete', filename='app.py', id=article.id) }}">Delete</a>
+                            <a type="button" class="w-40 btn btn-lg btn-warning"
+                               href="{{ url_for('edit', filename='app.py', id = article.id) }}">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+    </main>{% endblock %}
